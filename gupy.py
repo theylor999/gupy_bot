@@ -6,9 +6,13 @@ from datetime import datetime, timedelta, timezone
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 
+
+TELEGRAM_BOT_TOKEN = "COLOQUE O SEU TOKEN AQUI"
+
+
 df_cidades = pd.read_csv('cidades.csv')
 df_estados = pd.read_csv('estados.csv')
-TELEGRAM_BOT_TOKEN = "7600076583:AAFZ4q5vy65rK6KimQ2LFleK6u7VXYvBCOI"
+
 HOURS, STATE, CITIES, SEARCH = range(4)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -18,10 +22,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def get_hours(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         context.user_data['hours'] = int(update.message.text)
-        await update.message.reply_text("Digite um estado (ou 'pular' para ignorar):")
+        await update.message.reply_text("Digite um Estado (ou 'pular' para ignorar):")
         return STATE
     except ValueError:
-        await update.message.reply_text("Por favor, digite um número válido.")
+        await update.message.reply_text("Por favor, digite um Estado válido.")
         return HOURS
 
 async def get_state(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -96,9 +100,6 @@ async def search_jobs(update: Update, context: ContextTypes.DEFAULT_TYPE):
         data_publicacao = vaga.get('publishedDate')
         data_vaga = datetime.strptime(data_publicacao, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
         data_formatada = data_vaga.strftime('%d/%m/%Y às %H:%M')
-
-        if cidade == 'Porto Alegre' and modelo not in ['Híbrido', 'Remoto']:
-            continue
 
         if data_vaga >= tempo:
             mensagem = f'*{nome}* - {page}\n📍 {cidade}\n🏢 {modelo}\n🗓 Publicada em {data_formatada}\n🔗 [Acesse a vaga]({link})'
