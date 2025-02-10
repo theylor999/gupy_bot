@@ -1,6 +1,6 @@
-# Vagas Gupy Bot
+# Vagas de Emprego Bot
 
-Este projeto é uma solução automatizada para buscar vagas de emprego na plataforma Gupy, com filtros personalizáveis, como tempo desde a postagem da vaga, estado, cidade e tipo de vaga. O bot envia uma lista das vagas que atendem aos filtros fornecidos pelo usuário.
+Este projeto é uma solução automatizada para buscar vagas de emprego na plataforma Gupy e LinkedIn, com filtros personalizáveis, como tempo desde a postagem da vaga, estado, cidade e tipo de vaga. O bot envia uma lista das vagas que atendem aos filtros fornecidos pelo usuário.
 
 ## Funcionalidades
 
@@ -13,6 +13,8 @@ Este projeto é uma solução automatizada para buscar vagas de emprego na plata
 
 - **Plataforma Cloud**: Utiliza Amazon AWS para garantir que o bot funcione de forma estável e escalável.
 
+- **Notificações**: O bot tem a funcionalidade de notificações, onde o usuário pode configurar seus filtros, para receber as novas vagas postadas diariamente de acordo com o seu perfil.
+
 - **Tecnologias Utilizadas**:
   - Python
   - API
@@ -20,14 +22,12 @@ Este projeto é uma solução automatizada para buscar vagas de emprego na plata
   - Bots
   - Amazon AWS
 
-## Funcionalidade Futura
-
-Em breve, o bot permitirá que o usuário configure notificações, onde poderá escolher quais vagas deseja pesquisar automaticamente a cada X minutos ou horas.
-
 ## Como Testar
 
-O bot está disponível no **Telegram**. Para testar, basta buscar pelo **@vagas_theylor_bot** no app e enviar os filtros desejados.
+O bot está disponível no **Telegram**. Para testar, basta buscar pelo **@vagas_de_emprego_bot** no app e enviar os filtros desejados.
 
 ---
 
 Esse projeto visa simplificar a busca por vagas na plataforma Gupy, tornando o processo mais ágil e automatizado.
+
+Obs: o repositorio atualmente só contém a parte inicial do bot de Gupy, em breve irei disponibilizar o resto do script, incluindo as notificações e o LinkedIn.
