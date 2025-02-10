@@ -1,6 +1,6 @@
 # Vagas de Emprego Bot
 
-Este projeto é uma solução automatizada para buscar vagas de emprego na plataforma Gupy e LinkedIn, com filtros personalizáveis, como tempo desde a postagem da vaga, estado, cidade e tipo de vaga. O bot envia uma lista das vagas que atendem aos filtros fornecidos pelo usuário.
+Este projeto é uma solução automatizada para buscar vagas de emprego nas plataformas Gupy e LinkedIn, com filtros personalizáveis, como tempo desde a postagem da vaga, estado, cidade e tipo de vaga. O bot envia uma lista das vagas que atendem aos filtros fornecidos pelo usuário.
 
 ## Funcionalidades
 
